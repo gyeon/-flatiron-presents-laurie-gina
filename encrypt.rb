@@ -49,7 +49,7 @@ formula = nil
 plain_text.each do |plain_letter|
   key_text.each do |key|
     # Execute algebraic formula
-    formula = (plain_letter + key) % 26)
+    formula = (plain_letter + key) % 26
     added_ints << formula
   end
 end
