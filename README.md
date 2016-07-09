@@ -1,2 +1,2 @@
-# -flatiron-presents-laurie-gina
-flatiron presents meet up project
+# flatiron-presents-laurie-gina
+Flatiron Presents meetup encryption project
