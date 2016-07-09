@@ -1,3 +1,4 @@
+require 'pry'
 def test(plain_text, keyword)
   hash = (('a'..'z').map.with_index.to_a).to_h
 
@@ -12,7 +13,8 @@ def test(plain_text, keyword)
   # end
 
 # Convert array of text into array of integers
-    
+  
+
   int_converted_text = []
 # iterate through plain text
   joined_text.select do |letter|
@@ -26,30 +28,25 @@ def test(plain_text, keyword)
   int_converted_key = []
   joined_key.select do |key_letter|
     hash.each do |key, value|
-      int_converted_key.push(letter = value.to_i) if letter == key
+      int_converted_key.push(key_letter = value.to_i) if key_letter == key
     end
   end
 
 # Encrypt the combination
   
     # Add plaintext and key together
-  added_ints = []
-  formula = nil
-  int_converted_text.each do |plain_letter|
-    int_converted_key.each do |key|
-      # Execute algebraic formula
-      formula = (plain_letter + key) % 26
-      added_ints << formula
-    end
-  end
+  formula = [int_converted_text, int_converted_key].transpose.map {|x| x.reduce :+}
+  formula.map! {|num| num % 26}
+
 
 # Convert back the ints to letters
-  #   converted = []
-  #   added_ints.each do |num|
-  #     hash.each do |key, value|
-  #       converted.push(num = key) if num == value
-  #     end
-  #   end
-  # end
-
+  converted = []
+  formula.each do |num|
+    hash.each do |key, value|
+      converted.push(num = key) if num == value
+    end
+  end
+puts converted
 end
+
+test("apples", "banana")
