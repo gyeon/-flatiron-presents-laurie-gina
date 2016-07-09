@@ -6,15 +6,7 @@ def test(plain_text, keyword)
   joined_text = plain_text.split("").reject { |e| e.to_s == " " }
   joined_key = keyword.split("").reject { |e| e.to_s == " " }
 
-  # def iterate_key(key)
-  #   if key.length < text.length
-  #     (text.length / key.length).times(key)
-  #     .shift(text.length % key.length)
-  # end
-
 # Convert array of text into array of integers
-  
-
   int_converted_text = []
 # iterate through plain text
   joined_text.select do |letter|
@@ -25,8 +17,15 @@ def test(plain_text, keyword)
     end
   end
 
+  lengthened_key = []
+  joined_key.cycle do |jk|
+    # joined_text.each do |jt|
+      lengthened_key << jk 
+      break if lengthened_key.length == joined_text.length
+  end
+
   int_converted_key = []
-  joined_key.select do |key_letter|
+  lengthened_key.select do |key_letter|
     hash.each do |key, value|
       int_converted_key.push(key_letter = value.to_i) if key_letter == key
     end
@@ -38,7 +37,6 @@ def test(plain_text, keyword)
   formula = [int_converted_text, int_converted_key].transpose.map {|x| x.reduce :+}
   formula.map! {|num| num % 26}
 
-
 # Convert back the ints to letters
   converted = []
   formula.each do |num|
@@ -49,4 +47,4 @@ def test(plain_text, keyword)
 puts converted
 end
 
-test("apples", "banana")
+test("thanks laurie", "from gina")
