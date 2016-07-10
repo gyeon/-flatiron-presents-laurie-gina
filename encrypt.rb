@@ -1,15 +1,15 @@
 class Nox
 
   HASH = (('A'..'Z').map.with_index.to_a).to_h
-  
+
   def initialize(text, key)
     @text = text.upcase.split("").reject { |e| e.to_s == " " }
     @key = key.upcase.split("").reject { |e| e.to_s == " " }
   end
 
   # Assign index to alphabet as a key-value pair
-  # def alphabet_hash
-  #   Hash = (('A'..'Z').map.with_index.to_a).to_h
+  # def alphabet_HASH
+  #   HASH = (('A'..'Z').map.with_index.to_a).to_h
   # end
 
   # Get plaintext / key and delete all spaces
@@ -32,8 +32,8 @@ class Nox
     numbers = []
     # iterate through plain text
     text.select do |letter|
-      # iterate through hash
-      hash.each do |key, value|
+      # iterate through HASH
+      HASH.each do |key, value|
         # change each element to value of corresponding key
         numbers.push(letter = value.to_i) if letter == key
       end
@@ -63,7 +63,7 @@ class Nox
     ints = combined
     converted = []
     ints.each do |num|
-      hash.each do |key, value|
+      HASH.each do |key, value|
         converted.push(num = key) if num == value
       end
     end
