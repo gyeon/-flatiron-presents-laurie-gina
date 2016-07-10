@@ -1,13 +1,19 @@
 class Nox
+
+  def initialize(text, key)
+    @text = text.upcase.split("").reject { |e| e.to_s == " " }
+    @key = key.upcase.split("").reject { |e| e.to_s == " " }
+  end
+
   # Assign index to alphabet as a key-value pair
   def alphabet_hash
     hash = (('A'..'Z').map.with_index.to_a).to_h
   end
 
   # Get plaintext / key and delete all spaces
-  def joined(text)
-    text.upcase.split("").reject { |e| e.to_s == " " }
-  end
+  # def joined(text)
+  #   text.upcase.split("").reject { |e| e.to_s == " " }
+  # end
 
   def key_cycle(key)
     lengthened_key = []
@@ -63,3 +69,5 @@ class Nox
   end
 
 end
+
+
