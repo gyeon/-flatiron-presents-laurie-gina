@@ -1,14 +1,16 @@
 class Nox
 
+  HASH = (('A'..'Z').map.with_index.to_a).to_h
+  
   def initialize(text, key)
     @text = text.upcase.split("").reject { |e| e.to_s == " " }
     @key = key.upcase.split("").reject { |e| e.to_s == " " }
   end
 
   # Assign index to alphabet as a key-value pair
-  def alphabet_hash
-    hash = (('A'..'Z').map.with_index.to_a).to_h
-  end
+  # def alphabet_hash
+  #   Hash = (('A'..'Z').map.with_index.to_a).to_h
+  # end
 
   # Get plaintext / key and delete all spaces
   # def joined(text)
