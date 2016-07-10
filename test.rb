@@ -1,10 +1,10 @@
 require 'pry'
 def test(plain_text, keyword)
-  hash = (('a'..'z').map.with_index.to_a).to_h
+  hash = (('A'..'Z').map.with_index.to_a).to_h
 
 # Get plaintext / key and delete all spaces
-  joined_text = plain_text.split("").reject { |e| e.to_s == " " }
-  joined_key = keyword.split("").reject { |e| e.to_s == " " }
+  joined_text = plain_text.upcase.split("").reject { |e| e.to_s == " " }
+  joined_key = keyword.upcase.split("").reject { |e| e.to_s == " " }
 
 # Convert array of text into array of integers
   int_converted_text = []
@@ -47,4 +47,4 @@ def test(plain_text, keyword)
 puts converted
 end
 
-test("thanks laurie", "from gina")
+test("nox", "lumos")
