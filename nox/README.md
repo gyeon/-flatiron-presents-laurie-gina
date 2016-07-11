@@ -1,11 +1,8 @@
-# README
+NOX - A Ruby encryption project by Gina and Laurie for Flatiron Presents
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app implements the Vigenére cipher to encryp and decrypt a text of alphabetic characters.
 
-Things you may want to cover:
-
-* Ruby version
+<!-- * Ruby version
 
 * System dependencies
 
@@ -19,6 +16,4 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+* Deployment instructions -->
