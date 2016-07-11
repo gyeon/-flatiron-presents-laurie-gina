@@ -1,4 +1,7 @@
 class CiphersController < ApplicationController
+  def root
+  end
+
   def new
     @cipher = Cipher.new
   end
