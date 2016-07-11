@@ -32,7 +32,6 @@ class Nox
     plain_text = convert_to_ints(text)
     key_text = convert_to_ints(key_cycle(key))
     # Add plaintext and key together
-    binding.pry
     combined = [plain_text, key_text].transpose.map {|num| num.reduce :+}
     result = combined.map {|num| num % 26}
 
