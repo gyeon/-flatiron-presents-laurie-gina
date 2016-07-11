@@ -17,10 +17,10 @@ class Nox
 ##### we want ascii characters 32 - 126
   # Encrypt the combination
   def encrypt
-    plain_text = text
-    key_text = key_cycle(key)
+    # plain_text = text
+    # key_text = key_cycle(key)
     # Add plaintext and key together
-    combined = [plain_text, key_text].transpose.map {|num| num.inject :+}
+    combined = [text, key_cycle(key)].transpose.map {|num| num.inject :+}
     # The maximum added number in the line above will be 160.
     # The minimum added number will be 130.
     # Therefore,
@@ -30,10 +30,10 @@ class Nox
   end
 
   def decrypt
-    plain_text = text
-    key_text = key_cycle(key)
+    # plain_text = text
+    # key_text = key_cycle(key)
     # Add plaintext and key together
-    combined = [plain_text, key_text].transpose.map {|num| num.inject :-}
+    combined = [text, key_cycle(key)].transpose.map {|num| num.inject :-}
     show_encrypted(combined)
   end
 
@@ -42,7 +42,7 @@ class Nox
   def key_cycle(key)
     lengthened_key = []
     key.cycle do |k|
-      lengthened_key << k 
+      lengthened_key << k
       break if lengthened_key.length == text.length
     end
     lengthened_key
@@ -54,6 +54,6 @@ class Nox
 end
 
 test = Nox.new("i love napping three times a day", "booyah")
-test.encrypt
+puts test.encrypt
 decrypt_test = Nox.new("0@CT+;(DDG44;<FC+A0A9Q'1(M", "booyah")
 puts decrypt_test.decrypt
