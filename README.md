@@ -1,6 +1,6 @@
 NOX - A Ruby encryption project by Gina and Laurie for Flatiron Presents
 
-This app implements the Vigenére cipher to encryp and decrypt a text of alphabetic characters.
+This app implements the Vigenére cipher to encrypt and decrypt a text of alphabetic characters.
 
 <!-- * Ruby version
 
