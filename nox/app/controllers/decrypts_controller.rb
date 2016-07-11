@@ -1,0 +1,2 @@
+class DecryptsController < ApplicationController
+end

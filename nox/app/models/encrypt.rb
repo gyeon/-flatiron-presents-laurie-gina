@@ -1,26 +1,18 @@
-class Cipher < ApplicationRecord
-  attr_accessor :text, :key
-   START = "A".ord #65
-   FINISH = "Z".ord #90
+class Encrypt < ApplicationRecord
+  START = "A".ord #65
+  FINISH = "Z".ord #90
 
-  def initialize(text, key)
-    # 1. Convert string into array
-    # 2. Remove empty space
-    # 3. Convert each element in array into the ordinal ASCII numbers
+  def text=(text)
     @text = text.split("").reject { |e| e.to_s == " " }.map(&:ord)
+  end
+
+  def key=(key)
     @key = key.split("").reject { |e| e.to_s == " " }.map(&:ord)
   end
 
   def encrypt
     # Add plaintext and key together into one array
     combined = [text, key_cycle].transpose.map {|num| num.inject :+}
-    # Call #show_encrypted and pass in the combined array
-    show_encrypted(combined)
-  end
-
-  def decrypt
-    # Add plaintext and key together into one array
-    combined = [text, key_cycle].transpose.map {|num| num.inject :-}
     # Call #show_encrypted and pass in the combined array
     show_encrypted(combined)
   end
@@ -47,8 +39,3 @@ class Cipher < ApplicationRecord
     sum_of_arrays.map(&:chr).join("")
   end
 end
-
-# test = Cipher.new("i love napping three times a day", "booyah")
-# puts test.encrypt
-# decrypt_test = Cipher.new("0@CT+;(DDG44;<FC+A0A9Q'1(M", "booyah")
-# puts decrypt_test.decrypt
