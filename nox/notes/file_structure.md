@@ -1,23 +1,32 @@
 Model
   - app.rb
 
-View
-  - encrypt
-    - new.html.erb
-      Form for user input
-    - show.html.erb
-      Show encrypted message
-  - decrypt
-    - new.html.erb
-      Form for user input
-    - show.html.erb
-      Show decrypted message
+Views
+  - new.html.erb
+    - displays a form with two buttons 
+      - encrypt
+      - decrypt
+  - show.html.erb
+    - renders the ecrypted or decrypted message
+
+
 
 Controller
-  - app_controller.rb
-    #new
-    #show
+  - 2 controllers 
+    - decrypt
+      #new
+      #show
+      #create
+
+    - encrypt
+      #new
+      #show
+      #create
+
+ 
 
 Config
   - routes.rb
     resources :app, only: [:new, :show]
+
+
