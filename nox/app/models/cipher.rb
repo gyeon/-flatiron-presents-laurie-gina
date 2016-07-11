@@ -1,5 +1,4 @@
-require 'pry'
-class Cipher
+class Cipher < ApplicationRecord
   attr_accessor :text, :key
    START = "A".ord #65
    FINISH = "Z".ord #90

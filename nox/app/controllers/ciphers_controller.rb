@@ -1,0 +1,2 @@
+class CiphersController < ApplicationController
+end
