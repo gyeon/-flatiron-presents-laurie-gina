@@ -1,0 +1,19 @@
+<%= form_for @encrypt do |f| %>
+  <p><%= f.label "Input your message" %> 
+  <%= f.text_area :text %></p>
+  <p><%= f.label "Input your secret key" %> 
+  <%= f.text_area :key %></p>
+  <%= f.submit "Encrypt" %> 
+  
+
+
+<% end %>
+
+
+
+
+
+
+
+
+

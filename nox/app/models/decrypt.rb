@@ -2,19 +2,22 @@ class Decrypt < ApplicationRecord
   START = "A".ord #65
   FINISH = "Z".ord #90
 
-  def text=(text)
-    @text = text.split("").reject { |e| e.to_s == " " }.map(&:ord)
-  end
+  # def text=(text)
+  #   @text = text.split("").reject { |e| e.to_s == " " }.map(&:ord)
+  # end
 
-  def key=(key)
-    @key = key.split("").reject { |e| e.to_s == " " }.map(&:ord)
-  end
+  # def key=(key)
+  #   @key = key.split("").reject { |e| e.to_s == " " }.map(&:ord)
+  # end
 
   def decrypt
+    @text = text.split("").reject { |e| e.to_s == " " }.map(&:ord)
+    @key = key.split("").reject { |e| e.to_s == " " }.map(&:ord)
+
     # Add plaintext and key together into one array
-    combined = [text, key_cycle].transpose.map {|num| num.inject :-}
+    combined = [@text, key_cycle].transpose.map {|num| num.inject :-}
     # Call #show_encrypted and pass in the combined array
-    show_encrypted(combined)
+    @message = show_decrypted(combined)
   end
 
   private
@@ -22,11 +25,11 @@ class Decrypt < ApplicationRecord
   def key_cycle
     lengthened_key = []
     # Go through each element in the key
-    key.cycle do |k|
+    @key.cycle do |k|
       # Push each element into new array
       lengthened_key << k
       # Finish looping until key.length == text.length
-      break if lengthened_key.length == text.length
+      break if lengthened_key.length == @text.length
     end
     lengthened_key
   end

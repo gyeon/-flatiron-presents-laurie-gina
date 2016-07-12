@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160711230929) do
+ActiveRecord::Schema.define(version: 20160712001132) do
 
   create_table "ciphers", force: :cascade do |t|
     t.string   "text"
@@ -24,13 +24,15 @@ ActiveRecord::Schema.define(version: 20160711230929) do
     t.string   "key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "message"
   end
 
   create_table "encrypts", force: :cascade do |t|
     t.string   "text"
     t.string   "key"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "cipher_text"
   end
 
 end

@@ -1,12 +1,10 @@
-<%= form_for @cipher do |f| %>
+<%= form_for @decrypt do |f| %>
   <p><%= f.label "Input your message" %> 
   <%= f.text_area :text %></p>
   <p><%= f.label "Input your secret key" %> 
   <%= f.text_area :key %></p>
-  <%= f.button_to "Encrypt", controller: "encrypt#show" %> 
-  <%= f.button_to "Decrypt", controller: "decrypt#show" %> 
+  <%= f.submit "Decrypt" %> 
   
-
 
 <% end %>
 
