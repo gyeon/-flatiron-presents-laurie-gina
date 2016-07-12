@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get '/' => 'root'
+  root to: 'homepages#root'
   # get '/ciphers/new' => 'ciphers#new'
 
   resources :decrypts

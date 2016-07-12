@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712001132) do
+ActiveRecord::Schema.define(version: 20160712014212) do
 
   create_table "ciphers", force: :cascade do |t|
     t.string   "text"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 20160712001132) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "cipher_text"
+  end
+
+  create_table "homepages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

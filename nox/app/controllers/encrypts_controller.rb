@@ -1,5 +1,5 @@
 class EncryptsController < ApplicationController
-
+ 
   def new
     @encrypt = Encrypt.new
   end
