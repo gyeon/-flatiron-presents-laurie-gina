@@ -1,14 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Encrypt Your Message!</title>
+  <link rel="stylesheets" type="text/css" href="../../../assets/stylesheets/encrypts.scss">
+</head>
+<body>
+<h1>Encrypt Your Message!</h1>
 <%= form_for @encrypt do |f| %>
   <p><%= f.label "Input your message" %> 
   <%= f.text_area :text %></p>
   <p><%= f.label "Input your secret key" %> 
   <%= f.text_area :key %></p>
-  <%= f.submit "Encrypt" %> 
-  
-
-
+  <p><%= f.submit "Encrypt" %></p>
 <% end %>
-
+</body>
+</html>
 
 
 
