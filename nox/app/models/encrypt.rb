@@ -2,21 +2,11 @@ class Encrypt < ApplicationRecord
   START = "A".ord #65
   FINISH = "Z".ord #90
 
-
-  # def plain_text
-  #   @text = text.split("").reject { |e| e.to_s == " " }.map(&:ord)
-  #   byebug
-  # end
-
-  # def secret_key
-  #   @key = key.split("").reject { |e| e.to_s == " " }.map(&:ord)
-  # end
-
   def encrypt
-    # Add plaintext and key together into one array
+    # Split string into array, remove empty strings, and convert into ASCII
     @text = text.split("").reject { |e| e.to_s == " " }.map(&:ord)
     @key = key.split("").reject { |e| e.to_s == " " }.map(&:ord)
-
+    # For each index of elements in both arrays, add them together into one array
     combined = [@text, key_cycle].transpose.map {|num| num.inject :+}
     # Call #show_encrypted and pass in the combined array
     @cipher_text = show_encrypted(combined)
