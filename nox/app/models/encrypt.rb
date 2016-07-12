@@ -4,8 +4,8 @@ class Encrypt < ApplicationRecord
 
   def encrypt
     # Split string into array, remove empty strings, and convert into ASCII
-    @text = text.split("").reject { |e| e.to_s == " " }.map(&:ord)
-    @key = key.split("").reject { |e| e.to_s == " " }.map(&:ord)
+    @text = text.downcase.split("").reject { |e| e.to_s == " " }.map(&:ord)
+    @key = key.downcase.split("").reject { |e| e.to_s == " " }.map(&:ord)
     # For each index of elements in both arrays, add them together into one array
     combined = [@text, key_cycle].transpose.map {|num| num.inject :+}
     # Call #show_encrypted and pass in the combined array
