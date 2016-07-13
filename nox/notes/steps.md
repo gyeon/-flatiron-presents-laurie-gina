@@ -7,7 +7,7 @@ Encryption steps
     4. encrypt
         a. iterate through plain text and private key
         b. add first plain text integer with first private key integer
-        c. mod with 26 so that it wraps if greater than 26
+        c. mod with table size so that it wraps 
         d. then take that integer and convert back to corresponding letter
             i. cipher text
 

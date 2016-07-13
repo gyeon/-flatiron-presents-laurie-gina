@@ -30,3 +30,12 @@ Config
     resources :app, only: [:new, :show]
 
 
+## we need a text area for plain text
+## text area for secret key
+## two submit buttons - values of encrypt and decrypt 
+## if encrypt is chosen
+    #### redirect to show
+            ### to display message with original plain text with it
+## if decrypt is chosen
+    #### redirect to show
+            ### to display message with original plain text with it
