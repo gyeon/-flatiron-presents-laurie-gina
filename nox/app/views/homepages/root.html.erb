@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheets" type="text/css" href="../../../assets/stylesheets/homepages.scss">
-  <body background="http://wallpapercave.com/wp/Cp56rKI.png">
-  </body>
+  <link rel="stylesheets" type="text/css" href="../../../assets/stylesheets/homepages.css">
+
   <head>
     <meta charset="utf-8">
     <style>
@@ -15,28 +14,18 @@
     @font-face { font-family: Maven Pro; src: url('MavenPro-Regular.ttf'); }
     p {
       font-family: Maven Pro
-    } 
-
+    }
     </style>
     <title>Nox</title>
-    <link rel="stylesheets" type="text/css" href="../../../assets/stylesheets/ciphers.scss">
   </head>
-  <body>
+  <body class ="home">
     <h1><font color="#F8F8FF"> Nox </font></h1>
+    <p><font color="#F8F8FF"> Send and receive secret messages using a key word</p>
+    <form method="link" action="/encrypts/new">
+      <input type="submit" id="submit" value="Encrypt">
+    </form>
+    <form method="link" action="/decrypts/new">
+      <input type="submit" id="submit" value="Decrypt">
+    </form>
   </body>
 </html>
-
-<form method="link" action="/encrypts/new">
-  <h2><font color="#F8F8FF"><input type="submit" value="Encrypt"></font></h2>
-</form>
-<form method="link" action="/decrypts/new">
-  <h2><font color="#F8F8FF"><input type="submit" value="Decrypt"></font></h2>
-</form>
-
-
-
- 
-
-
-
-

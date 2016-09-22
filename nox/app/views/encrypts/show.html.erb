@@ -1,9 +1,29 @@
-<h2>Your Encrypted Message</h2>
-<h3> Your Original Message</h3>
-<p><%= @encrypt.text %></p>
-<h3> Your Encrypted Message</h3>
-<p><%=  @encrypt.cipher_text %></p>
-
-<form method="link" action="/decrypts/new" class="link2">
-  <h2><font color="#F8F8FF"><input type="submit" value="Click Here to Decrypt"></font></h2>
-</form>
+<html>
+  <head>
+    <title>Encrypt Your Message!</title>
+    <link rel="stylesheets" type="text/css" href="../../../assets/stylesheets/encrypts.css">
+    <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,700,500' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <div class="fs-form-wrap" id="fs-form-wrap">
+        <div class="fs-title">
+          <ol class="fs-fields">
+            <li class="fs-current">
+              <h1>Your Original Message</h1>
+              <p><%= @encrypt.text %></p>
+            </li>
+            <li class>
+              <h1>Your Encrypted Message</h1>
+              <p><%= @encrypt.cipher_text %></p>
+            </li>
+              <br></br>
+              <form method="link" action="/decrypts/new" class: 'fs-submit'>
+                <input type="submit" value="Click Here to Decrypt">
+              </form>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>

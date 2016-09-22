@@ -1,5 +1,5 @@
 class EncryptsController < ApplicationController
- 
+
   def new
     @encrypt = Encrypt.new
   end
@@ -7,11 +7,9 @@ class EncryptsController < ApplicationController
   def create
 
     @encrypt = Encrypt.create(text: params[:encrypt][:text], key: params[:encrypt][:key])
-    
-
     @encrypt.cipher_text = @encrypt.encrypt
     @encrypt.update(cipher_text: @encrypt.cipher_text)
-    
+
     redirect_to encrypt_path(@encrypt)
   end
 
@@ -24,4 +22,3 @@ class EncryptsController < ApplicationController
   end
 
 end
-
