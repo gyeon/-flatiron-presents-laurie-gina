@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Decrypt</title>
+  <title>Decrypt Your Message!</title>
+  <link rel="stylesheets" type="text/css" href="../../../assets/stylesheets/encrypts.css">
+  <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,700,500' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<h2>Decrypt Your Message!</h2>
-<%= form_for @decrypt do |f| %>
-  <p><%= f.label "Input your message" %> 
-  <%= f.text_area :text %></p>
-  <p><%= f.label "Input your secret key" %> 
-  <%= f.text_area :key %></p>
-  <p><%= f.submit "Decrypt" %></p>
-<% end %>
+  <div class="container">
+    <div class="fs-form-wrap" id="fs-form-wrap">
+      <div class="fs-title">
+        <h1>Decrypt Your Message!</h1>
+        <%= form_for @decrypt do |f| %>
+        <ol class="fs-fields">
+          <li class="fs-current">
+            <%= f.label "Your message...", class: 'fs-field-label fs-anim-upper', for: 'q1'%>
+            <%= f.text_area :text, class: 'fs-anim-lower', id: 'q1' %>
+          </li>
+          <li class>
+            <%= f.label "Your secret key", class: 'fs-field-label fs-anim-upper', for: 'q2'%>
+            <%= f.text_area :key, class: 'fs-anim-lower', id: 'q2'%>
+          </li>
+            <br></br>
+            <%= f.submit "Decrypt", class: 'fs-submit' %>
+            <% end %>
+        </ol>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

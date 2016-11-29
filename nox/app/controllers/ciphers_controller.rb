@@ -6,12 +6,6 @@ class CiphersController < ApplicationController
     @cipher = Cipher.new
   end
 
-  # def create
-
-  #   # @cipher = Cipher.create(cipher_params)
-  #   # redirect_to cipher_path(@cipher)
-  # end
-
   def show
     @cipher = Cipher.find(params[:id])
   end
